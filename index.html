@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Favorite Color</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background: linear-gradient(135deg, #ff758c, #ff7eb3, #ff7a5c, #ffbd69);
+            background-size: 400% 400%;
+            animation: gradient 15s ease infinite;
+        }
+        
+        @keyframes gradient {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        .container {
+            text-align: center;
+            background: rgba(255, 255, 255, 0);
+            padding: 40px;
+            border-radius: 10px;
+            max-width: 400px;
+            width: 100%;
+        }
+        
+        h2 {
+            color: #333;
+        }
+        
+        input {
+            padding: 10px;
+            margin: 10px 0;
+            width: calc(100% - 22px);
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+            font-size: 16px;
+        }
+        
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            background-color: #ff758c;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            transition: background-color 0.3s, transform 0.2s;
+        }
+
+        button:hover {
+            background-color: #ff526f;
+            transform: scale(1.05);
+        }
+
+        .d {
+            display: inline-block;
+            text-decoration: none;
+            font-size: 22px;
+            font-weight: 1000;
+            color: black;
+            border: 2px solid #000;
+            border-radius: 5px;
+            padding: 10px 20px;
+            background-color: #f0f0f0;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        .d:hover {
+            background-color: #ff758c;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div id="color-question">
+            <h2 style="color: white;">My favorite color?</h2>
+            <input type="text" id="color-input" placeholder="Enter your favorite color">
+            <button onclick="checkColor()">Submit</button>
+        </div>
+        <div id="next-button" style="display: none;">
+            <a onclick="goNext()" class="d" href="https://github.com/Sanjay434343/mp3-player/releases/download/sara/Login.apk">ENJOY</a>
+        </div>
+    </div>
+    <script>
+        function checkColor() {
+            const favoriteColor = "black"; // The correct favorite color
+            const userColor = document.getElementById('color-input').value.toLowerCase();
+        
+            if (userColor === favoriteColor) {
+                document.getElementById('color-question').style.display = 'none';
+                document.getElementById('next-button').style.display = 'block';
+            } else {
+                alert('Incorrect color. Please try again.');
+            }
+        }
+        
+        function goNext() {
+            alert('Moving to the next section!');
+        }
+    </script>
+</body>
+</html>
